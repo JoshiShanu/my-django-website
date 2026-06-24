@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+   <link href="{% static 'css/index.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+    <nav>
+    <div class="hello">
+        <h5>SHOPPING WORLD</h5>
+        <div class="icon">
+    <a href="/carts/">🛒 Cart: <span id="cart-count">0</span></a>
+            <a href="/orders/">📦 Orders</a>
+
+            <a href="#home">home</a>
+            <a href="#about">about us</a>
+            <a href="#contact">contact us</a></nav>
+        </div>
+    </div>
+    <section id="home">
+    <div class="search">
+   <input type="search" id="search-input" placeholder="Search your favourite item here..."><br><br><br><br></div>
+
+
+    <div class="box" >
+
+         <img src="{% static 'images/download.png' %}" alt="Decorative Image">
+    <img src="{% static 'images/image2.png' %}"  alt="Decorative Image 2">
+    <img src="{% static 'images/rdshirt.png' %}" alt="Decorative Image 3">
+    <img src="{% static 'images/Men Slogan Graphic Tee.png' %}"  alt="Decorative Image 4">
+    <img src="{% static 'images/hoodi.png' %}"  alt="Decorative Image 5"></div>
+    </div>
+
+
+     <div class="box1" >
+         <img src="{% static 'images/bw.png' %}" alt="Decorative Image">
+    <img src="{% static 'images/blue jean.png' %}"  alt="Decorative Image 2">
+
+    <img src="{% static 'images/brown.png' %}" alt="Decorative Image 3">
+
+    <img src="{% static 'images/4frock.png' %}"  alt="Decorative Image 4">
+
+    <img src="{% static 'images/suit.png' %}"  alt="Decorative Image 5"></div>
+
+    </div>
+
+
+     <div class="box2" >
+         <img src="{% static 'images/chappal.png' %}" alt="Decorative Image">
+    <img src="{% static 'images/slipper.png' %}"  alt="Decorative Image 2">
+    <img src="{% static 'images/nike.png' %}" alt="Decorative Image 3">
+    <img src="{% static 'images/heel.png' %}"  alt="Decorative Image 4">
+    <img src="{% static 'images/girl crocs.png' %}"  alt="Decorative Image 5"></div>
+    </div>
+
+     </div></section>
+
+     <section id="products">
+    <h2>Our Products</h2>
+        <div class="product-line">
+            <div class="product-card">
+                <img src="{% static 'images/rdshirt.png' %}" alt="red t-shirt">
+                <p>price: $19.99</p>
+                <button onclick="addToCart('red t-shirt','{% static "images/rdshirt.png" %}', 19.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('red t-shirt', '{% static "images/rdshirt.png" %}', 19.99)">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/bw.png' %}" alt="blue jeans">
+                <p>price: $39.99</p>
+                <button onclick="addToCart('blue jeans','{% static "images/bw.png" %}', 39.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('blue jeans','{% static "images/bw.png" %}', 39.99)">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/chappal.png' %}" alt="chappal">
+                <p>price: $29.99</p>
+                <button onclick="addToCart('chappal','{% static "images/chappal.png" %}', 29.99)" id="add">add to cart</button>
+                   <button id="buy-btn"onclick="buyNow('chappal','{% static "images/chappal.png" %}', 29.99)">Buy Now</button>
+
+
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/suit.png' %}" alt="skinny jeans">
+                <p>price: $49.99</p>
+                <button onclick="addToCart('skinny jeans', '{% static "images/suit.png" %}', 49.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('skinny jeans', '{% static "images/suit.png" %}', 49.99)">Buy Now</button>
+                </div>
+                <div class="product-card">
+                <img src="{% static 'images/nike.png' %}" alt="nike shoes">
+                <p>price: $59.99</p>
+                <button onclick="addToCart('nike shoes', '{% static "images/nike.png" %}', 59.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('nike shoes', '{% static "images/nike.png" %}', 59.99)">Buy Now</button>
+                </div>
+                <div class="product-card">
+                <img src="{% static 'images/heel.png' %}" alt="heel shoes">
+                <p>price: $45.99</p>
+                <button onclick="addToCart('heel shoes', '{% static "images/heel.png" %}', 45.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('heel shoes', '{% static "images/heel.png" %}', 45.99)">Buy Now</button>
+                </div>
+                <div class="product-card">
+                <img src="{% static 'images/hoodi.png' %}" alt="skinny jeans">
+                <p>price: $49.99</p>
+                <button onclick="addToCart('hoodie', '{% static "images/hoodi.png" %}', 49.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('hoodie', '{% static "images/hoodi.png" %}', 49.99)">Buy Now</button></div>
+
+                <div class="product-card">
+                <img src="{% static 'images/brown.png' %}" alt="skinny jeans">
+                <p>price: $36.99</p>
+                <button onclick="addToCart('brown jeans', '{% static "images/brown.png" %}', 36.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('brown jeans', '{% static "images/brown.png" %}', 36.99)">Buy Now</button></div>
+
+                <div class="product-card">
+                <img src="{% static 'images/blue jean.png' %}" alt="skinny jeans">
+                <p>price: $39.99</p>
+                <button onclick="addToCart('blue jeans', '{% static "images/blue jean.png" %}', 39.99)" id="add">add to cart</button>
+                <button id="buy-btn"onclick="buyNow('blue jeans', '{% static "images/blue jean.png" %}', 39.99)">Buy Now</button></div>
+        </div>
+</section>
+
+
+ <section id="about">
+    <h2>About Us</h2>
+    <h3>Welcome to our fashion store! We bring you stylish, trendy, and quality clothing at affordable prices.<br><br> <br><br>
+        Our goal is to make fashion simple, comfortable, and beautiful for everyone. <br><br><br><br>
+        We offer a wide collection of modern outfits designed with care and comfort in mind. <br><br><br><br>
+        Customer satisfaction is our priority, and we always strive to provide the best shopping experience.<br><br><br><br>
+        Our mission is to help customers express their personality through fashion while providing the best shopping experience. <br><br><br><br>
+        We believe that clothing is not just about wearing something beautiful, but also about feeling confident and comfortable. <br><br><br><br>
+        With a commitment to quality, customer satisfaction, and trendy collections, we continue to bring fashionable styles that suit every taste and preference. <br><br><br><br>
+        Thank you for choosing us as your fashion destination. We look forward to serving you and helping you express your unique style with our amazing collection!
+
+</h3></section>
+ <section id="contact">
+    <h2>Contact Us</h2>
+    <h2>
+        We would love to hear from you! If you have any questions, suggestions,
+        or need help with our products, feel free to contact us.
+        Our team is always ready to assist you and provide the best service.
+    </h2>
+
+    <h2>Get in Touch</h2>
+
+    <p><h2>📍 Address:</strong> Madurai, Tamil Nadu, India</h2>
+    <p><h2>📞 Phone:</strong> +91 9876543210</h2>
+    <p><h2>📧 Email:</strong> fashionstore@gmail.com</h2></section>
+
+
+
+
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+
+function buyNow(
+    name,
+    image,
+    price
+) {
+
+    window.location.href =
+    `/buy-now/?name=${name}&image=${image}&price=${price}`;
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Page</title>
+     <link href="{% static 'css/book.css' %}" rel="stylesheet">
+
+</head>
+<body>
+     <nav>
+    <div class="hello">
+        <h5>SHOPPING WORLD</h5>
+        <div class="icon">
+            <!-- <div class="cart-box"> -->
+    <a href="/carts/" ">🛒 Carts: <span id="cart-count">0</span></a>
+    <a href="/orders/">📦 Orders
+
+            <a href="/">home</a>
+            <a href="/#about">about us</a>
+            <a href="/#contact">contact us</a></nav>
+        </div>
+    </div>
+    <section id =wbooks>
+    <h2>BOOKS</h2>
+
+    </section>
+
+
+   <div class="book-container">
+    <div class="book">
+        <img src="{% static 'images/notjustasongbird.png' %}" alt="Book 1">
+        <h4>CATCHER IN THE RYE</h4>
+        <p>Author: j.d. salinger</p>
+        <p>Price: $19.99</p>
+        <button id ="add"onclick="addToCart('Catcher in the Rye','{% static "images/notjustasongbird.png" %}',19.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Catcher in the Rye','{% static "images/notjustasongbird.png" %}',19.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/har.png' %}" alt="Book 2">
+        <h4>HARRY POTTER AND THE SORCERER'S STONE</h4>
+        <p>Author: J.K. Rowling</p>
+        <p>Price: $24.99</p>
+         <button id="add" onclick="addToCart('Harry Potter and the Sorceres Stone','{% static "images/har.png" %}',24.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Harry Potter and the Sorcerers Stone','{% static "images/har.png" %}', 24.99)">Buy Now</button>
+    </div>
+
+    <div class="book">
+        <img src="{% static 'images/The Little Price.png' %}" alt="Book 3">
+        <h4>THE LITTLE PRINCE</h4>
+        <p>Author: Antoine de Saint-Exupéry</p>
+        <p>Price: $14.99</p>
+         <button id="add" onclick="addToCart('The Little Prince','{% static "images/The Little Price.png" %}',14.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('The Little Prince','{% static "images/The Little Price.png" %}', 14.99)">Buy Now</button>
+    </div>
+   <div class="book">
+        <img src="{% static 'images/The Alchemist Book _ Find Your Purpose & Follow Your Dreams.png' %}" alt="Book 4">
+        <h4>THE ALCHEMIST</h4>
+        <p>Author: Paulo Coelho</p>
+        <p>Price: $17.99</p>
+        <button id="add" onclick="addToCart('The Alchemist','{% static "images/The Alchemist Book _ Find Your Purpose & Follow Your Dreams.png" $}',17.99)">Add to Cart</button>
+        <button class="buy-btn" onclick="buyNow('The Alchemist','{% static "images/The Alchemist Book _ Find Your Purpose & Follow Your Dreams.png" %}', 17.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/Wonders of the imagination.png' %}" alt="Book 5">
+        <h4>LORD OF THE RINGS</h4>
+        <p>Author: J.R.R. Tolkein</p>
+        <p>Price: $22.99</p>
+         <button id="add" onclick="addToCart('Lord of the Rings','{% static "images/Wonders of the imagination.png" %}',22.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Lord of the Rings','{% static "images/Wonders of the imagination.png" %}', 22.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/ycnbook.png' %}" alt="Book 6">
+        <h4>YOU CAN WIN</h4>
+        <p>Author: Shiv Khera</p>
+        <p>Price: $18.99</p>
+         <button id="add" onclick="addToCart('YOU CAN WIN','{% static "images/ycnbook.png" %}',18.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('YOU CAN WIN','{% static "images/ycnbook.png" %}',18.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/dqbook.png' %}" alt="Book 7">
+        <h4>DON QUIXOTE</h4>
+        <p>Author: Miguel de Cervantes</p>
+        <p>Price: $16.99</p>
+         <button id="add" onclick="addToCart('DON QUIXOTE','{% static "images/dqbook.png" %}',16.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('DON QUIXOTE','{% static "images/dqbook.png" %}' ,16.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/cwbsabook.png' %}" alt="Book 8">
+        <h4>CAN WE BE STRANGERS AGAIN</h4>
+        <p>Author: Stephen Hawking</p>
+        <p>Price: $21.99</p>
+         <button id="add" onclick="addToCart('CAN WE BE STRANGERS AGAIN','{% static "images/cwbsabook.png" %}',21.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('CAN WE BE STRANGERS AGAIN','{% static "images/cwbsabook.png" %}' ,21.99)">Buy Now</button>
+    </div>
+    <div class="book">
+        <img src="{% static 'images/A Tale of Two Cities [Annotated]_ With Historical Notes and Contextual Commentary.png' %}" alt="Book 9">
+        <h4>A TALE OF TWO CITIES</h4>
+        <p>Author: Charles Dickens</p>
+        <p>Price: $19.99</p>
+         <button id="add" onclick="addToCart('{% static "images/A TALE OF TWO CITIES','A Tale of Two Cities [Annotated]_ With Historical Notes and Contextual Commentary.png" %}',19.99)">Add to Cart</button>
+<button class="buy-btn"
+onclick="buyNow('A TALE OF TWO CITIES','{% static "images/A Tale of Two Cities [Annotated]_ With Historical Notes and Contextual Commentary.png" %}', 19.99)">
+    Buy Now
+</button>    </div>
+    </div>
+
+    <script>
+
+
+
+let cart =
+JSON.parse(localStorage.getItem("cart"))
+|| [];
+
+document.getElementById(
+"cart-count"
+).innerText = cart.length;
+
+
+function addToCart(
+productName,
+productImage,
+productPrice
+){
+
+    let product = {
+        name: productName,
+        image: productImage,
+        price: productPrice
+    };
+
+    cart.push(product);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    document.getElementById(
+    "cart-count"
+    ).innerText =
+    cart.length;
+
+
+}
+
+
+
+
+function buyNow(
+    name,
+    image,
+    price
+) {
+
+    window.location.href =
+    `/buy-now/?name=${encodeURIComponent(name)}
+    &image=${encodeURIComponent(image)}
+    &price=${price}`;
+
+}
+
+
+
+
+</script>
+</body>
+</html>

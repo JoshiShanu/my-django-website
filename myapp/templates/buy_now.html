@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Buy Product</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            text-align:center;
+        }
+
+        .box{
+            width:400px;
+            background:white;
+            margin:auto;
+            padding:25px;
+            border-radius:20px;
+            box-shadow:0 0 10px gray;
+        }
+
+        img{
+            width:250px;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+        }
+
+        button{
+            background:black;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+<h1>Confirm Order</h1>
+
+<img
+src="{{ product_image }}"
+alt="product">
+
+<h2>
+{{ product_name }}
+</h2>
+
+<h3>
+₹{{ product_price }}
+</h3>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <!-- Hidden fields -->
+    <input type="hidden"
+           name="product_name"
+           value="{{ product_name }}">
+
+    <input type="hidden"
+           name="product_image"
+           value="{{ product_image }}">
+
+    <input type="hidden"
+           name="product_price"
+           value="{{ product_price }}">
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Confirm Order
+    </button>
+
+</form>
+
+</div>
+
+</body>

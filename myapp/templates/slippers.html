@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Page</title>
+    <link rel="stylesheet" href="orders.css">
+    <head>
+        <title>Slippers Page</title>
+        <link href="{% static 'css/slipper.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+             <nav>
+    <div class="hello">
+        <h5>SHOPPING WORLD</h5>
+        <div class="icon">
+            <!-- <div class="cart-box"> -->
+    <a href="/carts/" ">🛒 Cart: <span id="cart-count">0</span></a>
+    <a href="/orders/">📦 Orders
+
+            <a href="/">home</a>
+            <a href="/#about">about us</a>
+            <a href="/#contact">contact us</a></nav>
+        </div>
+    </div>
+    <section id =wbooks>
+    <h2>SLIPPERS</h2>
+    </section>
+
+        <div class ="clothing-container">
+            <div class="clothing-item">
+                <img src="{% static 'images/chappal.png' %}" alt="Clothing Item 1">
+                <p>Price:29.99></p>
+                <button id="add" onclick="addToCart('Chappal','{% static "images/chappal.png" %}',29.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Chappal','{% static "images/chappal.png" %}', 29.99)">Buy Now</button>
+            </div>
+            <div class="clothing-item">
+                <img src="{% static 'images/slipper.png' %}" alt="Clothing Item 2">
+                <p>Price:19.99></p>
+                 <button id="add" onclick="addToCart('Slipper','{% static "images/slipper.png" %}',19.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Slipper','{% static "images/slipper.png" %}', 19.99)">Buy Now</button>
+            </div>
+            <div class="clothing-item">
+                <img src="{% static 'images/nike.png' %}" alt="Clothing Item 3">
+                <p>Price:39.99></p>
+                 <button id="add" onclick="addToCart('Nike Slipper','{% static "images/nike.png" %}',39.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Nike Slipper','{% static "images/nike.png" %}', 39.99)">Buy Now</button>
+            </div>
+            <div class="clothing-item">
+                <img src="{% static 'images/heel.png' %}" alt="Clothing Item 4">
+                <p>Price:49.99></p>
+                 <button id="add" onclick="addToCart('Heel Slipper','{% static "images/heel.png" %}',49.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Heel Slipper', '{% static "images/heel.png" %}',49.99)">Buy Now</button>
+            </div>
+            <div class="clothing-item">
+                <img src="{% static 'images/mnshoe.png' %}" alt="Clothing Item 5">
+                <p>Price:59.99></p>
+                 <button id="add" onclick="addToCart('MNshoe','{% static "images/mnshoe.png" %}',59.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('MNShoe','{% static "images/mnshoe.png" %}', 59.99)">Buy Now</button>
+            </div>
+        <div class="clothing-item">
+                <img src="{% static 'images/white slip.png' %}" alt="Clothing Item 6">
+                <p>Price:29.99></p>
+                 <button id="add" onclick="addToCart('White Slip','{% static "images/white slip.png" %}',29.99)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('White Slip','{% static "images/white slip.png" %}', 29.99)">Buy Now</button>
+            </div>
+            </div>
+
+    <script>
+
+        let cart =
+JSON.parse(localStorage.getItem("cart"))
+|| [];
+
+document.getElementById(
+"cart-count"
+).innerText = cart.length;
+
+
+function addToCart(
+productName,
+productImage,
+productPrice
+){
+
+    let product = {
+        name: productName,
+        image: productImage,
+        price: productPrice
+    };
+
+    cart.push(product);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    document.getElementById(
+    "cart-count"
+    ).innerText =
+    cart.length;
+
+
+}
+
+
+
+function buyNow(
+    name,
+    image,
+    price
+) {
+
+    window.location.href =
+    `/buy-now/?name=${encodeURIComponent(name)}
+    &image=${encodeURIComponent(image)}
+    &price=${price}`;
+
+}
+
+
+
+
+</script>
+</body>
+</html>
