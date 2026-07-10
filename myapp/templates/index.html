@@ -19,46 +19,41 @@
 
             <a href="#home">home</a>
             <a href="#about">about us</a>
-            <a href="#contact">contact us</a></nav>
+            <a href="#contact">contact us</a>
         </div>
-    </div>
+    </div></nav>
     <section id="home">
     <div class="search">
    <input type="search" id="search-input" placeholder="Search your favourite item here..."><br><br><br><br></div>
 
 
-    <div class="box" >
+   <div class="slideshow-container">
 
-         <img src="{% static 'images/download.png' %}" alt="Decorative Image">
-    <img src="{% static 'images/image2.png' %}"  alt="Decorative Image 2">
-    <img src="{% static 'images/rdshirt.png' %}" alt="Decorative Image 3">
-    <img src="{% static 'images/Men Slogan Graphic Tee.png' %}"  alt="Decorative Image 4">
-    <img src="{% static 'images/hoodi.png' %}"  alt="Decorative Image 5"></div>
+    <div class="box">
+        <img src="{% static 'images/download.png' %}">
+        <img src="{% static 'images/image2.png' %}">
+        <img src="{% static 'images/rdshirt.png' %}">
+        <img src="{% static 'images/Men Slogan Graphic Tee.png' %}">
+        <img src="{% static 'images/hoodi.png' %}">
     </div>
 
-
-     <div class="box1" >
-         <img src="{% static 'images/bw.png' %}" alt="Decorative Image">
-    <img src="{% static 'images/blue jean.png' %}"  alt="Decorative Image 2">
-
-    <img src="{% static 'images/brown.png' %}" alt="Decorative Image 3">
-
-    <img src="{% static 'images/4frock.png' %}"  alt="Decorative Image 4">
-
-    <img src="{% static 'images/suit.png' %}"  alt="Decorative Image 5"></div>
-
+    <div class="box1">
+        <img src="{% static 'images/bw.png' %}">
+        <img src="{% static 'images/blue jean.png' %}">
+        <img src="{% static 'images/brown.png' %}">
+        <img src="{% static 'images/4frock.png' %}">
+        <img src="{% static 'images/suit.png' %}">
     </div>
 
-
-     <div class="box2" >
-         <img src="{% static 'images/chappal.png' %}" alt="Decorative Image">
-    <img src="{% static 'images/slipper.png' %}"  alt="Decorative Image 2">
-    <img src="{% static 'images/nike.png' %}" alt="Decorative Image 3">
-    <img src="{% static 'images/heel.png' %}"  alt="Decorative Image 4">
-    <img src="{% static 'images/girl crocs.png' %}"  alt="Decorative Image 5"></div>
+    <div class="box2">
+        <img src="{% static 'images/chappal.png' %}">
+        <img src="{% static 'images/slipper.png' %}">
+        <img src="{% static 'images/nike.png' %}">
+        <img src="{% static 'images/heel.png' %}">
+        <img src="{% static 'images/girl crocs.png' %}">
     </div>
 
-     </div></section>
+</div></section>
 
      <section id="products">
     <h2>Our Products</h2>
@@ -147,9 +142,9 @@
 
     <h2>Get in Touch</h2>
 
-    <p><h2>📍 Address:</strong> Madurai, Tamil Nadu, India</h2>
-    <p><h2>📞 Phone:</strong> +91 9876543210</h2>
-    <p><h2>📧 Email:</strong> fashionstore@gmail.com</h2></section>
+    <h2>📍 Address:</strong> Madurai, Tamil Nadu, India</h2>
+    <h2>📞 Phone:</strong> +91 9876543210</h2>
+    <h2>📧 Email:</strong> fashionstore@gmail.com</h2></section>
 
 
 
@@ -158,16 +153,13 @@
 
 <script>
 
-function buyNow(
-    name,
-    image,
-    price
-) {
+<script>
 
+function buyNow(name, image, price) {
     window.location.href =
-    `/buy-now/?name=${name}&image=${image}&price=${price}`;
-
+        `/buy-now/?name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}&price=${encodeURIComponent(price)}`;
 }
+</script>
 
 </script>
 </body>
