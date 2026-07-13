@@ -158,7 +158,7 @@ alt="product">
 ₹{{ product_price }}
 </h3>
 
-<form method="POST">
+<form method="POST" id="orderForm">
 
     {% csrf_token %}
 
@@ -184,5 +184,24 @@ alt="product">
 </form>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("DzsQ5N_KyXGNNOkIV");
 
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.send("service_tujk0px","template_d0r7698",{
+        customer_name: document.getElementById("id_username").value,
+        customer_email: document.getElementById("id_email").value,
+        product_name: document.querySelector("input[name='product_name']").value,
+        product_price: document.querySelector("input[name='product_price']").value
+    }).then(function(){
+        alert("Order placed successfully! Email sent.");
+        document.getElementById("orderForm").submit();
+    }, function(error){
+        alert("Email failed: " + error.text);
+    });
+});
+</script>
 </body>
