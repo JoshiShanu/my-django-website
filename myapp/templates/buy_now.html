@@ -197,7 +197,7 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
         product_name: document.querySelector("input[name='product_name']").value,
         product_price: document.querySelector("input[name='product_price']").value
     }).then(function(){
-        alert("Order placed successfully! Email sent.");
+        alert("Order placed successfully!");
         document.getElementById("orderForm").submit();
     }, function(error){
         alert("Email failed: " + error.text);
